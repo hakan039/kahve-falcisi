@@ -8,6 +8,7 @@ st.set_page_config(page_title="Yapay Zeka Kahve Falcısı", page_icon="🔮", la
 
 st.title("🔮 Yapay Zeka Kahve Falcısı ☕")
 st.write("Fincanınızın fotoğrafını yükleyin, bilgilerinizi girin ve falınızı öğrenin!")
+st.page_link("pages/1_Gizlilik_Politikasi.py", label="Gizlilik Politikası", icon="🔒")
 
 # Yan Panel - Kişisel Bilgiler
 st.sidebar.header("📜 Kişisel Bilgileriniz")
