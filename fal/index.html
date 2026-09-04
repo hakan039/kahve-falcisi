@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#120b2a">
+  <title>Fal Sonucun | Falcı Gacı</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Georgia, serif;
+      background: #120b2a;
+      color: #fffaf0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 32px 20px;
+      background: radial-gradient(circle at top, #3d1b58, #120b2a 62%);
+    }
+
+    main {
+      width: min(680px, 100%);
+      margin: 0 auto;
+      border: 1px solid #ffc857;
+      background: #1a1232;
+      box-shadow: 0 16px 40px #08031199;
+    }
+
+    header, section, footer { padding: 28px; }
+    header { text-align: center; border-bottom: 1px solid #ffc85766; }
+    h1 { margin: 0; color: #ffc857; font-size: 32px; }
+    #tur { margin: 10px 0 0; color: #e9d7f3; font-size: 17px; }
+    #yorum { margin: 0; white-space: pre-wrap; font-size: 18px; line-height: 1.7; }
+    footer { border-top: 1px solid #ffc85766; text-align: center; }
+    footer p { margin-top: 0; color: #e9d7f3; line-height: 1.5; }
+
+    a {
+      display: inline-block;
+      padding: 14px 22px;
+      background: #ffc857;
+      color: #160825;
+      font-family: system-ui, sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Falcı Gacı</h1>
+      <p id="tur">Fal sonucun</p>
+    </header>
+    <section>
+      <p id="yorum">Fal sonucu yükleniyor...</p>
+    </section>
+    <footer>
+      <p>Sen de falına baktırmak için Falcı Gacı'yı indir.</p>
+      <a href="https://play.google.com/store" rel="noopener">Uygulamayı İndir</a>
+    </footer>
+  </main>
+  <script>
+    const parameters = new URLSearchParams(window.location.search);
+    const tur = parameters.get('tur');
+    const yorum = parameters.get('yorum');
+
+    if (tur) document.getElementById('tur').textContent = tur;
+    if (yorum) document.getElementById('yorum').textContent = yorum;
+  </script>
+</body>
+</html>
