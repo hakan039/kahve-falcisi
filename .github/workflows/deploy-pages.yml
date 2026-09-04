@@ -26,9 +26,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Upload site artifact
+        run: |
+          mkdir public
+          cp privacy.html public/index.html
+
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public
 
       - name: Deploy to GitHub Pages
         id: deployment
