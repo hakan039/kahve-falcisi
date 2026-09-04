@@ -9,5 +9,6 @@ st.set_page_config(page_title="Gizlilik Politikası", page_icon="🔒", layout="
 privacy_policy = (Path(__file__).resolve().parent.parent / "privacy.html").read_text(
     encoding="utf-8"
 )
-privacy_page_height = max(600, len(privacy_policy.splitlines()) * 30)
-components.html(privacy_policy, height=privacy_page_height, scrolling=True)
+# The embedded page scrolls when needed, so its height stays stable as content changes.
+PRIVACY_PAGE_HEIGHT = 800
+components.html(privacy_policy, height=PRIVACY_PAGE_HEIGHT, scrolling=True)
